@@ -34,7 +34,7 @@ func SourceSolutions(ctx context.Context, root string) <-chan Solution {
 		}
 
 		for _, file := range files {
-			if path.Ext(file.Name()) != ".hs" || file.Name() == "test.go" {
+			if path.Ext(file.Name()) != ".hs" {
 				continue
 			}
 
