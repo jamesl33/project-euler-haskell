@@ -97,6 +97,7 @@ func FetchAnswers() []string {
 	if err != nil {
 		log.Fatalf("failed to open 'answer.txt': %v", err)
 	}
+	defer file.Close()
 
 	var (
 		answers []string
