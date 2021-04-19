@@ -16,6 +16,4 @@ maxPairsInRow xs = fmap maxPair (pairsInRow xs)
 maxPathSum :: [[Int]] -> Int
 maxPathSum = head . foldr1 (\a b -> fmap sumPair (zip a (maxPairsInRow b)))
 
-main = readFile "p067_triangle.txt" >>= print . maxPathSum . parse
-  where
-    parse = map (map read . words) . lines
+main = readFile "p067_triangle.txt" >>= print . maxPathSum . (map (map read . words) . lines)
